@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>2048 Tiffany — jewellery tile puzzle</title>
+  <meta name="description" content="Play 2048 Tiffany: merge matching jewels, climb from a heart tag pendant to the diamond necklace, and undo a move when the board fills up.">
+
+  <link rel="canonical" href="https://tile2048.github.io/2048-TIFFANY/">
+  <link rel="alternate" hreflang="en" href="https://tile2048.github.io/2048-TIFFANY/">
+  <link rel="alternate" hreflang="es" href="https://tile2048.github.io/2048-TIFFANY/es/">
+  <link rel="alternate" hreflang="x-default" href="https://tile2048.github.io/2048-TIFFANY/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2048 Tiffany — jewellery tile puzzle">
+  <meta property="og:description" content="Play 2048 Tiffany: merge matching jewels, climb from a heart tag pendant to the diamond necklace, and undo a move when the board fills up.">
+  <meta property="og:url" content="https://tile2048.github.io/2048-TIFFANY/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "2048 Tiffany",
+    "inLanguage": "en",
+    "url": "https://tile2048.github.io/2048-TIFFANY/",
+    "description": "A Tiffany jewellery version of the 2048 sliding tile puzzle: merge equal pieces to climb from a small pendant to the diamond necklace."
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+
+    <div class="heading">
+      <div class="title-container">
+        <h1 class="title">2048 <small>Tiffany</small></h1>
+      </div>
+      <div class="scores-container">
+        <div class="score-container">
+          <p>
+            <span class="caption">Score</span><br>
+            <span class="score-points">0</span>
+          </p>
+        </div>
+        <div class="best-container">
+          <p>
+            <span class="caption">Best Score</span><br>
+            <span class="best-points">0</span>
+          </p>
+        </div>
+        <div class="score-container">
+          <p>
+            <span class="caption">Level</span><br>
+            <span class="score-level">heart tag pendant</span>
+          </p>
+        </div>
+        <div class="best-container">
+          <p>
+            <span class="caption">Best Level</span><br>
+            <span class="best-level">heart tag pendant</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="lang-links"><span>English</span> <a href="es/" hreflang="es" lang="es">Español</a></nav>
+
+    <div class="above-game">
+      <p class="game-intro">Join tiles and get <strong>Diamonds!</strong></p>
+      <a class="restart-button">New Game</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Continue</a>
+          <a class="retry-button">Retry</a>
+          <div class="score-sharing"></div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <p class="game-explanation">
+      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same symbol touch, they <strong>get precious!</strong><br>
+      Hit 'Z' to <a href="#" onclick="handle_undo()">take back one or more moves</a>.
+    </p>
+    <p class="game-about">
+      The display case holds eleven pieces, priced from 70 &euro; to 149,000 &euro;. A heart tag pendant opens at 2, followed by a heart pendant, a pearl bracelet, the Paloma Picasso Love bracelet, an amethyst cocktail ring, a Sommerset ring in rose gold, long Hearths earrings, rope hoop earrings, a Mesh scarf necklace, a narrow Schlunberger bracelet, and the diamond necklace at the top. Slide the 4×4 case with the arrow keys or a swipe; two identical pieces become the next one and add their price to your score. Z takes back a move when the case is crowded. The diamond necklace is the piece to reach.
+    </p>
+    <hr>
+    <p class="tile-legend"><strong class="important">Tile Legend:</strong></p>
+    <div class="legend-list">
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-2"><img src="style/img/2.jpg" alt="heart tag pendant"></div></div>
+        <p>heart tag pendant<br>70 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-4"><img src="style/img/4.jpg" alt="heart pendant"></div></div>
+        <p>heart pendant<br>250 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-8"><img src="style/img/8.jpg" alt="pearl bracelet"></div></div>
+        <p>pearl bracelet<br>420 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-16"><img src="style/img/16.jpg" alt="Paloma Picasso Love bracelet"></div></div>
+        <p>Paloma Picasso Love bracelet<br>670 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-32"><img src="style/img/32.jpg" alt="amethyst cocktail ring"></div></div>
+        <p>amethyst cocktail ring<br>1050 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-64"><img src="style/img/64.jpg" alt="Sommerset ring in rose gold"></div></div>
+        <p>Sommerset ring in rose gold<br>2000 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-128"><img src="style/img/128.jpg" alt="long Hearths earrings"></div></div>
+        <p>long Hearths earrings<br>4350 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-256"><img src="style/img/256.jpg" alt="rope hoop earrings"></div></div>
+        <p>rope hoop earrings<br>8300 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-512"><img src="style/img/512.jpg" alt="Mesh scarf necklace"></div></div>
+        <p>Mesh scarf necklace<br>11700 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-1024"><img src="style/img/1024.jpg" alt="narrow Schlunberger bracelet"></div></div>
+        <p>narrow Schlunberger bracelet<br>54000 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-2048"><img src="style/img/2048.jpg" alt="diamond necklace"></div></div>
+        <p>diamond necklace<br>149000 &euro;</p>
+      </div>
+    </div>
+    <hr>
+    <p class="disclaimer">
+    <strong class="important">Note:</strong> A fan-made variant of 2048, the original game by Gabriele Cirulli.
+    </p>
+    <hr>
+    <p class="credits">
+      Jewels images by <a href="http://www.tiffany.com/?siteid=1&amp;" title="Home | Tiffany & Co.">Tiffany</a>.
+    </p>
+  </div>
+  <script src="js/seedrandom.js"></script>
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script>
+    // Assets and sentences of this page. The Spanish page sets ../ and its own words.
+    window.GAME_ROOT = "";
+
+    // Text that only appears once a game is running, in the language of this page.
+    // The pieces keep their Tiffany names, so both pages name them the same way.
+    window.PAGE_STRINGS = {
+      "game-won": "You win!",
+      "game-over": "Game over!",
+      "tweet1": "I scored ",
+      "tweet2": "€ at 2048-TIFFANY #2048game",
+      "2": "heart tag pendant",
+      "4": "heart pendant",
+      "8": "pearl bracelet",
+      "16": "Paloma Picasso Love bracelet",
+      "32": "amethyst cocktail ring",
+      "64": "Sommerset ring in rose gold",
+      "128": "long Hearths earrings",
+      "256": "rope hoop earrings",
+      "512": "Mesh scarf necklace",
+      "1024": "narrow Schlunberger bracelet",
+      "2048": "diamond necklace"
+    };
+
+    function Localize(key) {
+      return window.PAGE_STRINGS.hasOwnProperty(String(key)) ? window.PAGE_STRINGS[String(key)] : String(key);
+    }
+  </script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</body>
+</html>

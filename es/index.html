@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>2048 Tiffany — puzle de fichas de joyas</title>
+  <meta name="description" content="Juega a 2048 Tiffany: une joyas iguales, sube del colgante de corazón al collar de diamantes y deshaz una jugada cuando el tablero se llene.">
+
+  <link rel="canonical" href="https://tile2048.github.io/2048-TIFFANY/es/">
+  <link rel="alternate" hreflang="en" href="https://tile2048.github.io/2048-TIFFANY/">
+  <link rel="alternate" hreflang="es" href="https://tile2048.github.io/2048-TIFFANY/es/">
+  <link rel="alternate" hreflang="x-default" href="https://tile2048.github.io/2048-TIFFANY/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2048 Tiffany — puzle de fichas de joyas">
+  <meta property="og:description" content="Juega a 2048 Tiffany: une joyas iguales, sube del colgante de corazón al collar de diamantes y deshaz una jugada cuando el tablero se llene.">
+  <meta property="og:url" content="https://tile2048.github.io/2048-TIFFANY/es/">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <link href="../style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "2048 Tiffany",
+    "inLanguage": "es",
+    "url": "https://tile2048.github.io/2048-TIFFANY/es/",
+    "description": "Versión joyera del puzle de fichas 2048: une piezas iguales para subir del pequeño colgante al collar de diamantes."
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+
+    <div class="heading">
+      <div class="title-container">
+        <h1 class="title">2048 <small>Tiffany</small></h1>
+      </div>
+      <div class="scores-container">
+        <div class="score-container">
+          <p>
+            <span class="caption">Puntuación</span><br>
+            <span class="score-points">0</span>
+          </p>
+        </div>
+        <div class="best-container">
+          <p>
+            <span class="caption">Mejor puntuación</span><br>
+            <span class="best-points">0</span>
+          </p>
+        </div>
+        <div class="score-container">
+          <p>
+            <span class="caption">Nivel</span><br>
+            <span class="score-level">colgante con placa de corazón</span>
+          </p>
+        </div>
+        <div class="best-container">
+          <p>
+            <span class="caption">Mejor nivel</span><br>
+            <span class="best-level">colgante con placa de corazón</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="lang-links"><a href="../" hreflang="en" lang="en">English</a> <span>Español</span></nav>
+
+    <div class="above-game">
+      <p class="game-intro">¡Une fichas y consigue <strong>diamantes!</strong></p>
+      <a class="restart-button">Nueva partida</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Continuar</a>
+          <a class="retry-button">Reintentar</a>
+          <div class="score-sharing"></div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <p class="game-explanation">
+      <strong class="important">Cómo jugar:</strong> usa las <strong>teclas de flecha</strong> para mover las fichas. Cuando dos fichas con el mismo símbolo se tocan, ¡se vuelven <strong>más valiosas!</strong>.<br>
+      Pulsa 'Z' para <a href="#" onclick="handle_undo()">deshacer una o varias jugadas</a>.
+    </p>
+    <p class="game-about">
+      La vitrina guarda once piezas, con precios de 70 &euro; a 149.000 &euro;. Abre un colgante con placa de corazón en el 2, y después llegan un colgante de corazón, una pulsera de perlas, la pulsera Love de Paloma Picasso, un anillo cóctel de amatista, un anillo Sommerset de oro rosa, pendientes largos Hearths, pendientes de aro trenzados, un collar bufanda Mesh, una pulsera estrecha Schlunberger y el collar de diamantes en lo más alto. Desliza la vitrina de 4×4 con las flechas o el dedo; dos piezas iguales se convierten en la siguiente y suman su precio a la puntuación. La Z deshace una jugada cuando la vitrina se llena. El collar de diamantes es la pieza a alcanzar.
+    </p>
+    <hr>
+    <p class="tile-legend"><strong class="important">Leyenda de fichas:</strong></p>
+    <div class="legend-list">
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-2"><img src="../style/img/2.jpg" alt="colgante con placa de corazón"></div></div>
+        <p>colgante con placa de corazón<br>70 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-4"><img src="../style/img/4.jpg" alt="colgante de corazón"></div></div>
+        <p>colgante de corazón<br>250 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-8"><img src="../style/img/8.jpg" alt="pulsera de perlas"></div></div>
+        <p>pulsera de perlas<br>420 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-16"><img src="../style/img/16.jpg" alt="pulsera Love de Paloma Picasso"></div></div>
+        <p>pulsera Love de Paloma Picasso<br>670 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-32"><img src="../style/img/32.jpg" alt="anillo cóctel de amatista"></div></div>
+        <p>anillo cóctel de amatista<br>1050 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-64"><img src="../style/img/64.jpg" alt="anillo Sommerset de oro rosa"></div></div>
+        <p>anillo Sommerset de oro rosa<br>2000 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-128"><img src="../style/img/128.jpg" alt="pendientes largos Hearths"></div></div>
+        <p>pendientes largos Hearths<br>4350 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-256"><img src="../style/img/256.jpg" alt="pendientes de aro trenzados"></div></div>
+        <p>pendientes de aro trenzados<br>8300 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-512"><img src="../style/img/512.jpg" alt="collar bufanda Mesh"></div></div>
+        <p>collar bufanda Mesh<br>11700 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-1024"><img src="../style/img/1024.jpg" alt="pulsera estrecha Schlunberger"></div></div>
+        <p>pulsera estrecha Schlunberger<br>54000 &euro;</p>
+      </div>
+      <div class="legend-row">
+        <div class="legend-grid"><div class="legend-cell cell-2048"><img src="../style/img/2048.jpg" alt="collar de diamantes"></div></div>
+        <p>collar de diamantes<br>149000 &euro;</p>
+      </div>
+    </div>
+    <hr>
+    <p class="disclaimer">
+    <strong class="important">Nota:</strong> Una variante creada por aficionados de 2048, el juego original de Gabriele Cirulli.
+    </p>
+    <hr>
+    <p class="credits">
+      Imágenes de joyas por <a href="http://www.tiffany.com/?siteid=1&amp;" title="Home | Tiffany &amp; Co.">Tiffany</a>.
+    </p>
+  </div>
+  <script src="../js/seedrandom.js"></script>
+  <script src="../js/bind_polyfill.js"></script>
+  <script src="../js/classlist_polyfill.js"></script>
+  <script src="../js/animframe_polyfill.js"></script>
+  <script>
+    // Assets and sentences of this page. The English page sits at the repo root.
+    window.GAME_ROOT = "../";
+
+    // Text that only appears once a game is running, in the language of this page.
+    // The pieces keep their Tiffany names, so both pages name them the same way.
+    window.PAGE_STRINGS = {
+      "game-won": "¡Ganaste!",
+      "game-over": "¡Fin del juego!",
+      "tweet1": "Conseguí ",
+      "tweet2": "€ en 2048-TIFFANY #2048game",
+      "2": "colgante con placa de corazón",
+      "4": "colgante de corazón",
+      "8": "pulsera de perlas",
+      "16": "pulsera Love de Paloma Picasso",
+      "32": "anillo cóctel de amatista",
+      "64": "anillo Sommerset de oro rosa",
+      "128": "pendientes largos Hearths",
+      "256": "pendientes de aro trenzados",
+      "512": "collar bufanda Mesh",
+      "1024": "pulsera estrecha Schlunberger",
+      "2048": "collar de diamantes"
+    };
+
+    function Localize(key) {
+      return window.PAGE_STRINGS.hasOwnProperty(String(key)) ? window.PAGE_STRINGS[String(key)] : String(key);
+    }
+  </script>
+  <script src="../js/keyboard_input_manager.js"></script>
+  <script src="../js/html_actuator.js"></script>
+  <script src="../js/grid.js"></script>
+  <script src="../js/tile.js"></script>
+  <script src="../js/local_storage_manager.js"></script>
+  <script src="../js/game_manager.js"></script>
+  <script src="../js/application.js"></script>
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</body>
+</html>
